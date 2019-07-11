@@ -1,0 +1,22 @@
+<h1>Eventbook</h1>
+
+<div id="event_list">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date & time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @events.each do |event| %>
+          <td><%= event.title %></td>
+          <td><%= event.date_and_time %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'New event', new_event_path %>
