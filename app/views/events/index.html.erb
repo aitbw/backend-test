@@ -12,7 +12,8 @@
       <tr>
         <% @events.each do |event| %>
           <td><%= event.title %></td>
-          <td><%= event.date_and_time %></td>
+          <td><%= event.event_date %></td>
+          <td><%= event.event_time %></td>
         <% end %>
       </tr>
     </tbody>
