@@ -11,7 +11,12 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
-    redirect_to events_path if @event.save
+
+    if @event.save
+      redirect_to events_path, notice: 'Your event was successfully created!'
+    else
+      render 'new'
+    end
   end
 
   private
