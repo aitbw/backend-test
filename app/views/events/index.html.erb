@@ -11,7 +11,7 @@
     <tbody>
       <tr>
         <% @events.each do |event| %>
-          <td><%= event.title %></td>
+          <td><%= link_to event.title, event %></td>
           <td><%= event.event_date.strftime("%b %d") %> @ <%= event.event_time.strftime("%H:%M") %></td>
         <% end %>
       </tr>
