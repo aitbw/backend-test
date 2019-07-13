@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :load_event, only: :show
 
   def index
     @events = Event.all
@@ -20,6 +21,10 @@ class EventsController < ApplicationController
         :title, :location, :description,
         :event_date, :event_time, :price
       )
+    end
+
+    def load_event
+      @event = Event.find(params[:id])
     end
 
 end
