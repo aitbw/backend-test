@@ -9,12 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <% @events.each do |event| %>
+      <% @events.each do |event| %>
+        <tr>
           <td><%= link_to event.title, event %></td>
           <td><%= event.event_date.strftime("%b %d") %> @ <%= event.event_time.strftime("%H:%M") %></td>
-        <% end %>
-      </tr>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
