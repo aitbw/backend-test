@@ -1,7 +1,17 @@
-<h1><%= @event.title %></h1>
-<h2><%= @event.location %></h2>
+<h1 class="separator">Eventbook</h1>
 
-<p>
+<h2>
+  <%= @event.title %>
+</h2>
+
+<span class="details">
+  <b>Date & time</b>: <%= @event.event_date.strftime("%b %d") %> @ <%= @event.event_time.strftime("%H:%M") %>
+  <br />
+  <b>Price</b>: $<%= @event.price %> (USD)
+</span>
+
+<p class="separator">
+  <%= @event.location %><br /><br />
   <%= @event.description %>
 </p>
 
