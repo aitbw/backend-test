@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :load_event, only: :show
 
   def index
-    @events = Event.all
+    @events = Event.paginate(page: params[:page])
     @highlights = Event.highlights
   end
 

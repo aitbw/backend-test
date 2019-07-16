@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  self.per_page = 10
 
   default_scope { order(event_date: :desc) }
 
