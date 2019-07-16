@@ -21,8 +21,23 @@
       <% end %>
     </tbody>
   </table>
+
+  <%= will_paginate @events %>
+
+  <%= link_to 'New event', new_event_path %>
 </div>
 
-<%= will_paginate @events %>
+<div id="highlights-section">
+  <h3>Today's highlights</h3>
 
-<%= link_to 'New event', new_event_path %>
+  <ul>
+    <% @highlights.each do |highlight| %>
+      <b>
+        <li class="main_list_item"><%= link_to highlight.title, highlight %></li>
+      </b>
+      <p class="item_data">
+        <%= highlight.event_date.strftime("%b %d") %> @ <%= highlight.event_time.strftime("%H:%M") %>
+      </p>
+    <% end %>
+  </ul>
+</div>
